@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -qy --no-install-recommends \
     zip \
     unzip   
 
-RUN docker-php-ext-configure gd
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr
 
 RUN apt-get update && \    
     docker-php-ext-install pdo pdo_mysql zip dom fileinfo gd iconv intl json simplexml
