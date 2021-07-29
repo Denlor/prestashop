@@ -27,6 +27,9 @@ clean:
 
 jumpin:
 	docker exec -it ${container} bash
+	
+install:
+	docker exec ${container} php index_cli.php --domain=localhost --db_server=mysql --db_name=prestashop --db_user=root --db_password=secret
 
 composer-install:
 	docker exec ${container} composer install --ignore-platform-reqs --prefer-dist
